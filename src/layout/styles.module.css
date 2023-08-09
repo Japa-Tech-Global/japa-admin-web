@@ -1,0 +1,54 @@
+.navLink {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding: 12px;
+  padding-left: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  gap: 22px;
+}
+
+.navLink:hover {
+  background-color: #EBF2FF;
+}
+
+.activeNavLink {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0057FF;
+  padding: 12px;
+  padding-left: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #EBF2FF;
+  gap: 22px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.activeNavLink .navIcon path {
+  transition: stroke 0.3s;
+  stroke: #0057FF !important;
+}
+
+.dropdown {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+  padding: 7px;
+  padding-left: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  gap: 22px;
+}
+
+.dropdown:hover {
+  background-color: #EBF2FF;
+}
