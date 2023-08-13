@@ -2,14 +2,15 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: #000000;
-  padding: 12px;
-  padding-left: 25px;
+  color: #596780;
+  padding-block: 14px;
+  padding-inline: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: background-color 0.3s, color 0.3s;
-  gap: 22px;
+  gap: 14px;
+  border-radius: 10px;
 }
 
 .navLink:hover {
@@ -17,38 +18,22 @@
 }
 
 .activeNavLink {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
-  line-height: 22px;
-  color: #0057FF;
-  padding: 12px;
-  padding-left: 25px;
+  color: #ffffff;
+  padding-block: 14px;
+  padding-inline: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  background-color: #EBF2FF;
-  gap: 22px;
+  background-color: var(--primary);
+  font-family: var(--font-secondary);
+  gap: 14px;
+  border-radius: 10px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .activeNavLink .navIcon path {
   transition: stroke 0.3s;
-  stroke: #0057FF !important;
-}
-
-.dropdown {
-  font-weight: 500;
-  font-size: 14px;
-  color: #000000;
-  padding: 7px;
-  padding-left: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s, color 0.3s;
-  gap: 22px;
-}
-
-.dropdown:hover {
-  background-color: #EBF2FF;
+  fill: #fff !important;
 }

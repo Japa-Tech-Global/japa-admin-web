@@ -1,4 +1,4 @@
-import Home from '../../pages/home';
+import Home from '../../pages/dashboard';
 import ErrorPage from '../../pages/ErrorPage';
 import Login from '../../pages/auth/Login';
 import { PrivateRoute, ProtectedRoute } from '../utils';
@@ -7,6 +7,7 @@ import { getSessionDetails } from '../../functions/userSession';
 import ForgotPassword from '../../pages/auth/ForgotPassword';
 import ResetPassword from '../../pages/auth/ResetPassword';
 import VerifyAccount from '../../pages/auth/VerifyAccount';
+import AuthSuccessScreen from '../../pages/auth/AuthSuccessScreen';
 
 const currentUser: UserType | null = getSessionDetails();
 
@@ -17,7 +18,7 @@ const authenticationRoutes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: '/login',
+    path: '/auth/login',
     element: (
       <ProtectedRoute>
         <Login />
@@ -25,7 +26,7 @@ const authenticationRoutes = [
     ),
   },
   {
-    path: '/forgot-password',
+    path: '/auth/forgot-password',
     element: (
       <ProtectedRoute>
         <ForgotPassword />
@@ -33,7 +34,7 @@ const authenticationRoutes = [
     ),
   },
   {
-    path: '/reset-password/:email',
+    path: '/auth/reset-password/:email',
     element: (
       <ProtectedRoute>
         <ResetPassword />
@@ -41,10 +42,18 @@ const authenticationRoutes = [
     ),
   },
   {
-    path: '/verify-account',
+    path: '/auth/verify-account',
     element: (
       <PrivateRoute>
         <VerifyAccount />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: '/auth/success',
+    element: (
+      <PrivateRoute>
+        <AuthSuccessScreen />
       </PrivateRoute>
     ),
   },

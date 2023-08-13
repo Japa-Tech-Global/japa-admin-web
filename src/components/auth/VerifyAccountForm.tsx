@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoImage from '../../assets/brand/logo.svg';
 import Button from '../../common/Button';
 import LabelInput from '../../common/LabelInput/LabelInput';
 import { useFormik } from 'formik';
@@ -32,7 +31,7 @@ const VerifyAccountForm = () => {
       });
       sendFeedback(response.data?.message, 'success');
       formik.resetForm();
-      navigate('/home');
+      navigate('/dashboard');
     } catch (error: any) {
       sendCatchFeedback(error);
     } finally {
@@ -42,11 +41,11 @@ const VerifyAccountForm = () => {
 
   return (
     <>
-      <img src={LogoImage} alt='Koneqtor' />
-      <h1 className='font-bold text-2xl md:text-4xl pt-[52px] pb-[48px]'>
+      <h1 className='font-bold text-xl md:text-[26px] mb-[3px] font-poppins'>
         Verify Account
       </h1>
-      <p className='mb-6'>Enter the verification code sent to your email</p>
+      <p className='md:text-lg mb-6'>Enter the verification code sent to your email</p>
+
       <form onSubmit={formik.handleSubmit} className='w-full md:w-3/5 '>
         <LabelInput
           formik={formik}

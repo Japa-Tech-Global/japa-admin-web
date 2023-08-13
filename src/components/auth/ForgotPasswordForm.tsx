@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoImage from '../../assets/brand/logo.svg';
 import Button from '../../common/Button';
 import LabelInput from '../../common/LabelInput/LabelInput';
 import { useFormik } from 'formik';
@@ -26,18 +25,19 @@ const ForgotPasswordForm = () => {
     }),
   });
   const submitValues = async () => {
-    try {
-      setLoading(true);
-      const response = await appAxios.post('/auth/forgot-password', {
-        email: formik.values.email,
-      });
-      sendFeedback(response.data?.message, 'success');
-      navigate(`/reset-password/${formik.values.email}`);
-    } catch (error: any) {
-      sendCatchFeedback(error);
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   setLoading(true);
+    //   const response = await appAxios.post('/auth/forgot-password', {
+    //     email: formik.values.email,
+    //   });
+    //   sendFeedback(response.data?.message, 'success');
+    //   navigate(`/auth/reset-password/${formik.values.email}`);
+    // } catch (error: any) {
+    //   sendCatchFeedback(error);
+    // } finally {
+    //   setLoading(false);
+    // }
+    navigate(`/auth/reset-password/${formik.values.email}`);
   };
 
   return (
@@ -45,14 +45,13 @@ const ForgotPasswordForm = () => {
       <BackComponent
         text='Back to Login'
         containerClass='absolute top-10'
-        destination='/login'
+        destination='/auth/login'
       />
-      <img src={LogoImage} alt='Koneqtor' />
-      <h1 className='font-bold text-2xl md:text-4xl pt-[52px] pb-5'>Forgot Password</h1>
-      <p className='pb-6 font-normal'>
-        Enter your email below to get your verification code
-      </p>
-      <form onSubmit={formik.handleSubmit} className='w-full md:w-3/5 '>
+      <h1 className='font-bold text-xl md:text-[26px] mb-[3px] font-poppins'>
+        Forgot Password?
+      </h1>
+      <p className='md:text-lg mb-6'>You don't have to worry. Enter your email below.</p>
+      <form onSubmit={formik.handleSubmit} className='w-full'>
         <LabelInput
           formik={formik}
           name='email'

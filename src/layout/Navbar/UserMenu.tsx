@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import ArrowDownIcon from '../../assets/icons/chevron-down.svg';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { signOut } from '../../store/slices/user';
-import navLinks, { navItemType } from '../navLinks';
+import { mainLinks, navItemType, preferencesLinks } from '../navLinks';
 import { getNameInitials } from '../../functions/stringManipulations';
 import autoAnimate from '@formkit/auto-animate';
 import Notification from './Notification';
@@ -21,12 +21,11 @@ function UserMenu() {
   const logoutUser = async () => {
     try {
       await appAxios.get('/auth/logout');
-      dispatch(signOut());
-      navigate('/login');
     } catch (error) {
-      dispatch(signOut());
-      navigate('/login');
       sendCatchFeedback(error);
+    } finally {
+      dispatch(signOut());
+      navigate('/auth/login');
     }
   };
 
@@ -57,20 +56,20 @@ function UserMenu() {
           </button>
           {open && (
             <nav
-              className='rounded absolute right-0 md:left-0 top-14 bg-white w-40 md:w-full'
+              className='rounded absolute right-0 top-14 bg-white w-40'
               style={{ boxShadow: '12px 12px 24px rgba(0, 0, 0, 0.1)' }}
             >
               <ul className='flex flex-col'>
-                {navLinks.map((item: navItemType) => (
+                {[...mainLinks, ...preferencesLinks].map((item: navItemType) => (
                   <Link to={item.href} key={item.href}>
-                    <li className='p-2 hover:bg-[#5A5A5A] hover:text-white text-sm'>
+                    <li className='p-2 hover:bg-primary hover:text-white text-sm'>
                       {item.label}
                     </li>
                   </Link>
                 ))}
 
                 <li
-                  className='p-2 text-sm hover:bg-[#5A5A5A] text-error hover:text-white cursor-pointer'
+                  className='p-2 text-sm hover:bg-primary text-error hover:text-white cursor-pointer'
                   onClick={logoutUser}
                 >
                   Logout

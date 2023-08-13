@@ -2,7 +2,6 @@ import React from 'react';
 import AppLayout from '../../layout/AppLayout';
 import PageHeader from '../../layout/PageLayout/PageHeader';
 import ProfileImage from '../../components/settings/ProfileImage';
-import Notification from '../../components/settings/Notification';
 import Profile from '../../components/settings/Profile';
 import Password from '../../components/settings/Password';
 
@@ -14,7 +13,6 @@ const Settings = () => {
         <ProfileImage />
         <Password />
         <Profile />
-        <Notification />
       </div>
     </AppLayout>
   );

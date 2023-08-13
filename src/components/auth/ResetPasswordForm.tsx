@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoImage from '../../assets/brand/logo.svg';
 import Button from '../../common/Button';
 import LabelInput from '../../common/LabelInput/LabelInput';
 import { useFormik } from 'formik';
@@ -33,20 +32,22 @@ const ResetPasswordForm = () => {
     enableReinitialize: true,
   });
   const submitValues = async () => {
-    try {
-      setLoading(true);
-      const response = await appAxios.patch('/auth/reset-password', {
-        email: formik.values.email,
-        password: formik.values.password,
-        code: formik.values.verificationCode,
-      });
-      sendFeedback(response.data?.message, 'success');
-      navigate('/login');
-    } catch (error: any) {
-      sendCatchFeedback(error);
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   setLoading(true);
+    //   const response = await appAxios.patch('/auth/reset-password', {
+    //     email: formik.values.email,
+    //     password: formik.values.password,
+    //     code: formik.values.verificationCode,
+    //   });
+    //   sendFeedback(response.data?.message, 'success');
+    //   navigate('/auth/success');
+    // } catch (error: any) {
+    //   sendCatchFeedback(error);
+    // } finally {
+    //   setLoading(false);
+    // }
+
+    navigate('/auth/success');
   };
 
   const sendVerificationCode = async () => {
@@ -67,15 +68,14 @@ const ResetPasswordForm = () => {
     <>
       <BackComponent
         text='Back to forgot password'
-        containerClass='absolute top-10 right-10'
-        destination='/forgot-password'
+        containerClass='absolute top-16 right-20'
+        destination='/auth/forgot-password'
       />
-      <img src={LogoImage} alt='Koneqtor' />
-      <h1 className='font-bold text-2xl md:text-4xl pt-[52px] pb-5'>Reset Password</h1>
-      <p className='pb-6 font-normal'>
-        Enter your verification code and your new password
-      </p>
-      <form onSubmit={formik.handleSubmit} className='w-full md:w-3/5 '>
+      <h1 className='font-bold text-xl md:text-[26px] mb-[3px] font-poppins'>
+        Reset Your Password
+      </h1>
+      <p className='md:text-lg mb-6'>Don’t get caught up again</p>
+      <form onSubmit={formik.handleSubmit} className='w-full'>
         <LabelInput
           formik={formik}
           name='email'

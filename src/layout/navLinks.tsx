@@ -1,15 +1,4 @@
-import {
-  AdminsIcon,
-  AppointmentIcon,
-  ArtisanIcon,
-  CustomerIcon,
-  DisputeIcon,
-  HomeIcon,
-  NotificationIcon,
-  SettingIcon,
-  TicketIcon,
-  WaitingListIcon,
-} from './navIcons';
+import { AdminsIcon, HomeIcon, SettingIcon, UserIcon } from './navIcons';
 import styles from './styles.module.css';
 
 export interface navItemType {
@@ -23,69 +12,21 @@ export interface navItemType {
   }[];
 }
 
-const navLinks: navItemType[] = [
+export const mainLinks: navItemType[] = [
   {
-    label: 'Home',
-    href: '/home',
+    label: 'Dashboard',
+    href: '/dashboard',
     icon: <HomeIcon className={styles.navIcon} />,
   },
+
   {
-    label: 'Artisans',
-    href: '/artisans',
-    icon: <ArtisanIcon className={styles.navIcon} />,
-    type: 'dropdown',
-    dropdownLinks: [
-      {
-        label: 'All Artisans',
-        href: '/artisans',
-      },
-      {
-        label: 'Categories',
-        href: '/artisans/categories',
-      },
-    ],
+    label: 'User',
+    href: '/users',
+    icon: <UserIcon className={styles.navIcon} />,
   },
-  {
-    label: 'Customers',
-    href: '/customers',
-    icon: <CustomerIcon className={styles.navIcon} />,
-    type: 'dropdown',
-    dropdownLinks: [
-      {
-        label: 'All Customers',
-        href: '/customers',
-      },
-      {
-        label: 'Customer Ratings',
-        href: '/customers/ratings',
-      },
-    ],
-  },
-  {
-    label: 'Waiting List',
-    href: '/waiting-list',
-    icon: <WaitingListIcon className={styles.navIcon} />,
-  },
-  {
-    label: 'Appointments',
-    href: '/appointments',
-    icon: <AppointmentIcon className={styles.navIcon} />,
-  },
-  {
-    label: 'Disputes',
-    href: '/disputes',
-    icon: <DisputeIcon className={styles.navIcon} />,
-  },
-  {
-    label: 'Tickets',
-    href: '/tickets',
-    icon: <TicketIcon className={styles.navIcon} />,
-  },
-  {
-    label: 'Notifications',
-    href: '/notifications',
-    icon: <NotificationIcon className={styles.navIcon} />,
-  },
+];
+
+export const preferencesLinks: navItemType[] = [
   {
     label: 'Admins',
     href: '/admins',
@@ -97,5 +38,3 @@ const navLinks: navItemType[] = [
     icon: <SettingIcon className={styles.navIcon} />,
   },
 ];
-
-export default navLinks;

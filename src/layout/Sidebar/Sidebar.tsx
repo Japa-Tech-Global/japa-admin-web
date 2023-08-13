@@ -1,17 +1,15 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useAppDispatch } from '../../store/hooks';
 import { signOut } from '../../store/slices/user';
-import navLinks, { navItemType } from '../navLinks';
+import { mainLinks, navItemType, preferencesLinks } from '../navLinks';
 import styles from '../styles.module.css';
 import { LogoutIcon } from '../navIcons';
-import Dropdown from './Dropdown';
+import Logo from '../../assets/brand/logo.svg';
 
 function Sidebar() {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  const user = useAppSelector((state) => state.user.user);
 
   const checkRouteMatch = (route: string) => {
     const path = location.pathname;
@@ -20,16 +18,26 @@ function Sidebar() {
 
   const logoutUser = () => {
     dispatch(signOut());
-    navigate('/login');
+    navigate('/auth/login');
   };
 
-  if (!user) return null;
-
   return (
-    <nav className='w-[240px] text-black pt-[25px] pb-5 h-[calc(100vh-80px)] sticky top-[80px] hidden lg:block bg-white overflow-y-auto'>
-      <ul className='flex flex-col h-full gap-[15px]'>
-        {navLinks.map((item: navItemType) =>
-          item.type !== 'dropdown' ? (
+    <nav className='w-[25vw] text-black pb-5 max-h-screen sticky top-0 bottom-0 hidden lg:block bg-white overflow-y-auto customized-scrollbar border-r border-r-[#F3F5F7]'>
+      <div className='px-10 pt-[42px] pb-[58px]'>
+        <Link to='/dashboard'>
+          <img
+            src={Logo}
+            alt='Brand'
+            className='cursor-pointer object-contain hidden md:block w-full h-auto'
+          />
+        </Link>
+      </div>
+      <ul className='flex flex-col px-4'>
+        <p className='text-[#90A3BF] font-medium text-sm font-secondary mx-4 mb-[10px]'>
+          Main Menu
+        </p>
+        <div className='flex flex-col gap-2 mb-[56px]'>
+          {mainLinks.map((item: navItemType) => (
             <Link key={item.href} to={item.href}>
               <li
                 className={
@@ -40,14 +48,26 @@ function Sidebar() {
                 <span>{item.label}</span>
               </li>
             </Link>
-          ) : (
-            <Dropdown key={item.href} item={item} />
-          )
-        )}
-        <li
-          className={`p-3 pl-[25px] cursor-pointer hover:bg-[#EBF2FF] font-medium text-lg flex gap-[22px] items-center mt-auto  text-error`}
-          onClick={logoutUser}
-        >
+          ))}
+        </div>
+        <p className='text-[#90A3BF] font-medium text-sm font-secondary mx-4 mb-[10px]'>
+          Preferences
+        </p>
+        <div className='flex flex-col gap-2 mb-[56px]'>
+          {preferencesLinks.map((item: navItemType) => (
+            <Link key={item.href} to={item.href}>
+              <li
+                className={
+                  checkRouteMatch(item.href) ? styles.activeNavLink : styles.navLink
+                }
+              >
+                {item.icon}
+                <span>{item.label}</span>
+              </li>
+            </Link>
+          ))}
+        </div>
+        <li className={styles.navLink} onClick={logoutUser}>
           <LogoutIcon />
           <span>Logout</span>
         </li>

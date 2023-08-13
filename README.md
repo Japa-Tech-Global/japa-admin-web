@@ -1,22 +1,27 @@
-# cra-template-tailwindcss-typescript
+# Branded Website Template
 
-A streamlined [Tailwind CSS v3.1](https://tailwindcss.com) template for [Create React App](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
+## Description
 
-> This template installs and sets up [Tailwind CSS](https://tailwindcss.com) with TypeScript support.
+This is a template you can use to startup an admin dashboard project
 
-## Usage
+## Features
+
+- React JS (CRA)
+- Redux Toolkit
+- Tailwind CSS
+- Typescript
+- Along with Select, toast, form and modal components
+
+## Getting Started
+
+First, run the development server:
 
 ```bash
-npx create-react-app --template tailwindcss-typescript
+yarn dev
 ```
 
-## Credits
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project was made possible thanks to the following projects.
+## Live URL
 
-1. [GeoffSelby/cra-template-tailwindcss](https://github.com/GeoffSelby/cra-template-tailwindcss) - A streamlined Tailwind CSS template for Create React App (in JavaScript).
-2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - An official TypeScript template for create-react-app.
-
-## License
-
-MIT © [Sung M. Kim](https://sung.codes)
+[Hosted on Vercel](https://admin-dashboard-template-site.vercel.app/)
