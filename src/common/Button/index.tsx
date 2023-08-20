@@ -16,7 +16,7 @@ const Button = ({
       }
       type={type}
       style={{
-        backgroundColor: rest.disabled || loading ? '#B0B0B0' : '#0057FF',
+        backgroundColor: rest.disabled || loading ? '#B0B0B0' : '#7D30EE',
       }}
       disabled={rest.disabled || loading}
       {...rest}

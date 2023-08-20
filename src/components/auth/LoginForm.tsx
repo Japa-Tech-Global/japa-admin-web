@@ -9,6 +9,7 @@ import { appAxios } from '../../api/axios';
 import { useAppDispatch } from '../../store/hooks';
 import { Link, useNavigate } from 'react-router-dom';
 import { updateUser } from '../../store/slices/user';
+import Checkbox from '../../common/Checkbox';
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();
@@ -55,10 +56,10 @@ const LoginForm = () => {
 
   return (
     <>
-      <h1 className='font-bold text-xl md:text-[26px] mb-[3px] font-poppins'>
-        Hello Again!
+      <p className='md:text-lg mb-[3px]'>Welcome back</p>
+      <h1 className='font-medium text-xl md:text-[26px] mb-[85px] font-poppins'>
+        Log in
       </h1>
-      <p className='md:text-lg mb-6'>Welcome Back</p>
       <form onSubmit={formik.handleSubmit} className='w-full '>
         <LabelInput
           formik={formik}
@@ -74,15 +75,16 @@ const LoginForm = () => {
           type='password'
           className='mb-[32px]'
         />
+        <div className='mb-[72px] flex justify-between items-center'>
+          <Checkbox id='remember' label='Remember me' />
+          <Link to='/auth/forgot-password' className='text-sm font-normal text-primary'>
+            Forgot password?
+          </Link>
+        </div>
 
         <Button type='submit' loading={loading}>
           Login
         </Button>
-        <div className='mt-[18px] text-center'>
-          <Link to='/auth/forgot-password' className='text-sm font-normal opacity-70'>
-            Forgot password
-          </Link>
-        </div>
       </form>
     </>
   );

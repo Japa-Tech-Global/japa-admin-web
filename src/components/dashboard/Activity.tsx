@@ -34,7 +34,7 @@ const Activity = () => {
           <p className='mb-[21px] font-normal mt-[10px]'>
             Tega Moses has a dispute with the artisan Jude mike
           </p>
-          <Link to='/#' className='font-bold text-[#0057FF99] text-lg underline'>
+          <Link to='/#' className='font-bold text-[#7D30EE99] text-lg underline'>
             Join chat
           </Link>
         </div>
@@ -50,7 +50,7 @@ const Activity = () => {
           <p className='mb-[21px] font-normal mt-[10px]'>
             Ann Micheal has a dispute with the artisan Joshua
           </p>
-          <Link to='/#' className='font-bold text-[#0057FF99] text-lg underline'>
+          <Link to='/#' className='font-bold text-[#7D30EE99] text-lg underline'>
             Join chat
           </Link>
         </div>
@@ -66,7 +66,7 @@ const Activity = () => {
           <p className='mb-[21px] font-normal mt-[10px]'>
             Tega Moses has a dispute with the artisan Jude mike
           </p>
-          <Link to='/#' className='font-bold text-[#0057FF99] text-lg underline'>
+          <Link to='/#' className='font-bold text-[#7D30EE99] text-lg underline'>
             Join chat
           </Link>
         </div>

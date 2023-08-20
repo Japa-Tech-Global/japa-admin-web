@@ -41,7 +41,7 @@ function UserMenu() {
         <Notification />
         <div className='relative'>
           <button onClick={() => setOpen(true)} className='flex items-center relative'>
-            <div className='w-[39px] h-[39px] bg-[#00FFFF] flex items-center justify-center rounded-full mr-[5px]'>
+            <div className='w-[39px] h-[39px] bg-white flex items-center justify-center rounded-full mr-[5px]'>
               <span className='font-semibold text-sm text-black uppercase'>
                 {getNameInitials(user?.fullname || '')}
               </span>
@@ -55,10 +55,7 @@ function UserMenu() {
             <img src={ArrowDownIcon} alt='Menu' />
           </button>
           {open && (
-            <nav
-              className='rounded absolute right-0 top-14 bg-white w-40'
-              style={{ boxShadow: '12px 12px 24px rgba(0, 0, 0, 0.1)' }}
-            >
+            <nav className='rounded absolute right-0 top-12 bg-white w-40 shadow-md'>
               <ul className='flex flex-col'>
                 {[...mainLinks, ...preferencesLinks].map((item: navItemType) => (
                   <Link to={item.href} key={item.href}>
