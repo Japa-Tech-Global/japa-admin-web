@@ -27,7 +27,7 @@ function Sidebar() {
         <Link to='/dashboard'>
           <img
             src={Logo}
-            alt='Brand'
+            alt='Japa'
             className='cursor-pointer object-contain hidden md:block w-full h-auto'
           />
         </Link>

@@ -9,7 +9,7 @@ function Navbar() {
         <Link to='/dashboard'>
           <img
             src={LogoSmall}
-            alt='Brand'
+            alt='Japa'
             className='cursor-pointer object-contain lg:hidden h-[34.48px]'
           />
         </Link>

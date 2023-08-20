@@ -1,8 +1,4 @@
-# Branded Website Template
-
-## Description
-
-This is a template you can use to startup an admin dashboard project
+# JAPA Admin
 
 ## Features
 
@@ -24,4 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Live URL
 
-[Hosted on Vercel](https://admin-dashboard-template-site.vercel.app/)
+[Hosted on Netlify](https://japa-admin-web.netlify.app/)
