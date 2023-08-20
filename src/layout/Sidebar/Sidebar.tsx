@@ -22,8 +22,8 @@ function Sidebar() {
   };
 
   return (
-    <nav className='w-[25vw] text-black pb-5 max-h-screen sticky top-0 bottom-0 hidden lg:block bg-white overflow-y-auto customized-scrollbar border-r border-r-[#F3F5F7]'>
-      <div className='px-10 pt-[42px] pb-[58px]'>
+    <nav className='w-[25vw] pb-5 max-h-screen sticky top-0 bottom-0 hidden lg:block bg-primary overflow-y-auto customized-scrollbar h-screen'>
+      <div className='py-[39px] flex justify-center'>
         <Link to='/dashboard'>
           <img
             src={Logo}
@@ -33,7 +33,7 @@ function Sidebar() {
         </Link>
       </div>
       <ul className='flex flex-col px-4'>
-        <p className='text-[#90A3BF] font-medium text-sm font-secondary mx-4 mb-[10px]'>
+        <p className='text-primaryLight font-medium text-sm font-secondary mx-4 mb-[10px]'>
           Main Menu
         </p>
         <div className='flex flex-col gap-2 mb-[56px]'>
@@ -50,7 +50,7 @@ function Sidebar() {
             </Link>
           ))}
         </div>
-        <p className='text-[#90A3BF] font-medium text-sm font-secondary mx-4 mb-[10px]'>
+        <p className='text-primaryLight font-medium text-sm font-secondary mx-4 mb-[10px]'>
           Preferences
         </p>
         <div className='flex flex-col gap-2 mb-[56px]'>
